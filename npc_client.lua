@@ -19,11 +19,11 @@ setPedFrozen(pedSet, true)
 
 function pedDemecEngelle ( saldirgan )
     if source == pedMarket then
-        cancelEvent()
-	  elseif source == pedAch then
-		    cancelEvent()
-	  elseif source == pedSet then
-		    cancelEvent()
+    	cancelEvent()
+    elseif source == pedAch then
+	cancelEvent()
+    elseif source == pedSet then
+	cancelEvent()
     end
 end
 addEventHandler ( "onClientPedDamage", getRootElement(), pedDemecEngelle )
@@ -45,8 +45,8 @@ function()
            dxDrawText ( "Market", sx, sy - 30, sx, sy - 30, tocolor(255,255,255), math.min ( 0.3*(150/yakinlas)*1.4,1.3 - (0.5 + math.sin(math.rad(getTickCount())) / 3) / 12) * yaziboyut, "default-bold", "center", "bottom", false, false, false, true )
         end
 
-	      -- Görev Ped --
-	      local x, y, z = getElementPosition( pedAch )
+	-- Görev Ped --
+	local x, y, z = getElementPosition( pedAch )
         local x2, y2, z2 = getElementPosition(localPlayer)
         local yakinlas = getDistanceBetweenPoints3D(x,y,z, x2, y2, z2)
         if yakinlas < 2 then
@@ -58,7 +58,7 @@ function()
         end
 
       	-- Işınlanma Ped --
-	      local x, y, z = getElementPosition( pedSet )
+	local x, y, z = getElementPosition( pedSet )
         local x2, y2, z2 = getElementPosition(localPlayer)
         local yakinlas = getDistanceBetweenPoints3D(x,y,z, x2, y2, z2)
         if yakinlas < 2 then
@@ -80,7 +80,7 @@ function()
     local x2, y2, z2 = getElementPosition(localPlayer)
     local yakinlas = getDistanceBetweenPoints3D(x,y,z, x2, y2, z2)
     if ( yakinlas < 2 ) then
-		    --Bu kısıma market pedine girince yapılacak işlemler
+	--Bu kısıma market pedine girince yapılacak işlemler
         outputChatBox("Market pede girdin",255,255,255,true)
     end
 
@@ -89,7 +89,7 @@ function()
     local x2, y2, z2 = getElementPosition(localPlayer)
     local yakinlas = getDistanceBetweenPoints3D(x,y,z, x2, y2, z2)
     if ( yakinlas < 2 ) then
-		    --Bu kısıma görev pedine girince yapılacak işlemler
+	--Bu kısıma görev pedine girince yapılacak işlemler
         outputChatBox("Görev Pedine girdin",255,255,255,true)
     end
 
@@ -98,9 +98,8 @@ function()
     local x2, y2, z2 = getElementPosition(localPlayer)
     local yakinlas = getDistanceBetweenPoints3D(x,y,z, x2, y2, z2)
     if ( yakinlas < 2 ) then
-		    --Bu kısıma ışınlanma pedine girince yapılacak işlemler
+	--Bu kısıma ışınlanma pedine girince yapılacak işlemler
         outputChatBox("Işınlanma Pedine girdin",255,255,255,true)
     end
-
 end
 )
